@@ -13,16 +13,20 @@ import {
 const Home = () => {
   const router = useRouter();
 
+  const handlePress = () => {
+    console.log('press');
+  }
+
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
       <Stack.Screen options={{
         headerStyle: { backgroundColor: COLORS.lightWhite},
         headerShadowVisible: false,
         headerLeft: () => (
-          <ScreenHeaderBtn iconUrl={icons.menu} demension="60%" />
+          <ScreenHeaderBtn iconUrl={icons.menu} dimension="60%" handlePress={handlePress} />
         ),
         headerRight: () => (
-          <ScreenHeaderBtn iconUrl={images.profile} demension="100%" />
+          <ScreenHeaderBtn iconUrl={images.profile} dimension="100%" handlePress={handlePress} />
         ),
         headerTItle: "",
       }} />
