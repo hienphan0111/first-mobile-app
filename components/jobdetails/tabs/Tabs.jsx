@@ -6,12 +6,14 @@ import styles from './tabs.style'
 import { SIZES } from '../../../constants';
 
 const TabButton = ({ name, activeTab, onHandleSearchType }) => {
-  <TouchableOpacity
-    style={styles.btn(name, activeTab)}
-    onPress={onHandeSearchType}
-  >
-    <Text style={styles.btnText(name, activeTab)}>{name}</Text>
-  </TouchableOpacity>
+  return (
+    <TouchableOpacity
+      style={styles.btn(name, activeTab)}
+      onPress={onHandleSearchType}
+    >
+      <Text style={styles.btnText(name, activeTab)}>{name}</Text>
+    </TouchableOpacity>
+  )
 }
 const Tabs = ({ tabs, activeTab, setActiveTab }) => {
   return (
@@ -27,8 +29,8 @@ const Tabs = ({ tabs, activeTab, setActiveTab }) => {
         )}
         horizontal
         showsHorizontalScrollIndicator={false}
-        keyExtractor={item => item}
-        contentConainerStyle={{ columnGap: SIZES.small }}
+        keyExtractor={(item) => item}
+        contentConainerStyle={{ columnGap: SIZES.small / 2 }}
       />
     </View>
   )

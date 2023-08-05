@@ -18,6 +18,7 @@ const useFetch = (endpoint, query) => {
     params: { ...query },
   };
 
+  console.log(options.params)
   const fetchData = async () => {
     setIsLoading(true);
     try {
